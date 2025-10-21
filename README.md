@@ -9,18 +9,21 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+int main() 
+{
+    double num = 23.65;
+    double *ptr = &num;
+    *ptr = 25.0;
+    printf("The modified value is: %.2lf\n", num);
+    return 0;
+}
+```
 
 ## OUTPUT:
- 	
 
-
-
-
-
-
-
-
-
+![alt text](<WhatsApp Image 2025-10-21 at 15.57.15_3f2b59ae.jpg>)
 
 
 ## RESULT:
@@ -45,7 +48,32 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+unsigned long long calculateProduct(int n) {
+    if (n == 1) 
+    {
+        return 1;  
+    } 
+    else 
+    {
+        return n * calculateProduct(n - 1);  
+    }
+}
+
+int main() 
+{
+    int n;
+    unsigned long long product;
+    n = 12;
+    product = calculateProduct(n);
+    printf("The product of the first 12 natural numbers is: %llu\n", product);
+    return 0;
+}
+```
 ## OUTPUT:
+
+![alt text](<WhatsApp Image 2025-10-21 at 15.57.26_e193113a.jpg>)
          		
 ## RESULT:
 
@@ -68,17 +96,37 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
-
+```
+#include <stdio.h>
+int main() 
+{
+    int matrix[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    int rows = 3, cols = 3;
+    for (int i = 0; i < rows; i++) 
+    {
+        int sum = 0;  
+        for (int j = 0; j < cols; j++) 
+        {
+            sum += matrix[i][j];
+        }
+        printf("Sum of row %d = %d\n", i + 1, sum);
+    }
+    return 0;
+}
+```
 
 
 ## OUTPUT
 
 
+![alt text](<WhatsApp Image 2025-10-21 at 15.57.34_1d2399ea.jpg>)
  
- 
-
- ## RESULT
- 
+## RESULT
+Thus the program has been executed successfully.
 
 
 # EX-24-STRINGS
@@ -96,10 +144,32 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+#include <string.h>
 
+int main() 
+{
+    char str[100];
+    int num_rows;
+    scanf("%s", str);
+    scanf("%d", &num_rows);
+    int len = strlen(str);
+    int midpoint = (2 * num_rows - 1) / 2;  
+    for (int i = 1; i <= num_rows; i++) 
+    {
+        for (int j = 0; j < len; j++) 
+        {
+            printf("%c ", str[j]);
+        }
+        printf("\n"); 
+    }
+    return 0;
+}
+```
 
  ## OUTPUT
-
+![alt text](<WhatsApp Image 2025-10-21 at 15.57.44_7f736937.jpg>)
  
 
 ## RESULT
@@ -132,10 +202,35 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() 
+{
+    int i, n;
+    int arr[10];
+    int *parr = arr;
+    scanf("%d", &n);
+    if (n > 10) 
+    {
+        printf("Maximum allowed elements are 10.\n");
+        return 1;
+    }
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%d", (parr + i));
+    }
+    for (i = 0; i < n; i++) 
+    {
+        printf("%d ", *(parr + i));
+    }
+    printf("\n");
+    return 0;
+}
+```
 ## OUTPUT
 
- 
+![alt text](<WhatsApp Image 2025-10-21 at 15.57.53_10fbfece.jpg>)
 
 ## RESULT
 
